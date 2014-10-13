@@ -3,8 +3,8 @@
 DIR0 = github.com/kranfix/ejemcpp
 DIR1 = factorial
 
-INCP = ${CCINC}/${DIR0}/${DIR1}
-LIBP = ${CCPKG}/${DIR0}
+INCP = ${GOINC}/${DIR0}
+LIBP = ${GOPKG}/${DIR0}
 
 CC = g++ --std=c++11
 #CC = g++
@@ -21,7 +21,7 @@ HEADERS = factorial.h
 
 LIBAI =  $(patsubst %.a, ${LIBP}/%.a, $(LIBA))
 HEADERSI = $(patsubst %.h, ${INCP}/%.h, $(HEADERS))
-BINSI = $(patsubst %.cc, ${CCBIN}/%, $(CC_FILES))
+BINSI = $(patsubst %.cc, ${GOBIN}/%, $(CC_FILES))
 
 INCPATH = -I${INCP}
 LIBPATH = -L${LIBP}
@@ -72,7 +72,7 @@ ${LIBP}/%.a: %.a
 ${INCP}/%.h: %.h
 	cp -f $< $@
 
-${CCBIN}/%: %
+${GOBIN}/%: %
 	cp -f $< $@
 
 ${LIBA}: ${OBJS}
@@ -82,7 +82,7 @@ mkdir-pkg: ${LIBP}
 
 mkdir-inc: ${INCP}
 
-mkdir-bin: ${CCBIN}
+mkdir-bin: ${GOBIN}
 
 ${LIBP}:
 	mkdir -p $@
@@ -90,7 +90,7 @@ ${LIBP}:
 ${INCP}:
 	mkdir -p $@
 
-${CCBIN}:
+${GOBIN}:
 	mkdir -p $@
 
 verify:
