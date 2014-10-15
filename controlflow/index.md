@@ -16,7 +16,7 @@ sentencias podrían ser una de ambas:
 - Sentencias compuestas.
 
 Adicionalmente, las sentencias de control se pueden categorizar en 3 categorías:
-- Sentencias de decisión (if-else y switch-case).
+- Sentencias de decisión(if-else y switch-case.md).
 - Sentencias de iteración (while, do-while y for).
 - Sentencias de salto (goto, break y continue).
 
@@ -37,7 +37,7 @@ Ejemplo:
 ```
 
 # Sentencias de control
-Las sentencias de control que veremos son:;
+El orden en el que veremos las sentencias de control son:
 - [if-else](if_else.md)
 - [switch-case](switch_case.md)
 - [goto](goto.md)
