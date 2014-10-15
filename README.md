@@ -1,9 +1,13 @@
 ejemcpp
 =======
 
-Ejemplos en C++ (cplusplus.com)
+Este tutorial está inspirado en gran parte por cplusplus.com. Gran parte del texto será
+una traducción del tutorial en esta web.
 
-Revisar el https://github.com/kranfix/libro-go_vs_cpp para más detalles.
 
+## Contribuir
 Si deseas aportar con los ejemplos, puedes hacer un fork y un pull request con tu contibución.
-No olvides añadirte a la lista de contibuidores (contribuidores.txt).
+No olvides añadirte a la lista de [contibuidores](contribuidores.txt).
+
+## Correciones y bugs
+Si encuentras algún error no dudes en aperturar un [issue](https://github.com/tunki/tutorial-cpp/issues).
