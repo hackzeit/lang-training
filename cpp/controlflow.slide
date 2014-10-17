@@ -119,13 +119,18 @@ Sirve para tomar la decisión de elegir un segmente entre muchos de código a ej
 
 .image ../img/if3.png
 
+  if ( <condición a evaluar 1> ) <sentencia simple o compuesta 1>
+  else if ( <condición a evaluar 2> ) <sentencia simple o compuesta 2>
+  else if ( <condición a evaluar 3> ) <sentencia simple o compuesta 3>
+  else <sentencia simple o compuesta 4>
+
 * if - else (parte 4 de 4)
 
-*Ejemplo*de*if*
+*Ejemplos*
 
-*Ejemplo*de*if-esle*
-
-*Ejemplo*de*if*-*else*if*-else*
+.code controlflow/if.cpp /START if1/,/STOP if1/
+.code controlflow/if.cpp /START if2/,/STOP if2/
+.code controlflow/if.cpp /START if3/,/STOP if3/
 
 * switch - case (parte 1 de 3)
 
