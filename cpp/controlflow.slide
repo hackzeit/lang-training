@@ -65,7 +65,7 @@ Ejemplo:
 
 * Sentencias de control
 
-Se categorizan Categorías de las sentencias de control:
+Se categorizan en:
 
 - Sentencias de decisión(if-else y switch-case.md).
 - Sentencias de iteración (while, do-while y for).
@@ -83,12 +83,40 @@ Se categorizan Categorías de las sentencias de control:
 
 * if - else (parte 1 de 3)
 
-Iniciemos con la sentencia `if`
-.image ../img/if.svg
+*Sentencia*if*
+- Evaluamos una expresión, por lo general, booleana <condición a evaluar> (V o F).
+- Si la condición es verdadera, se ejecuta <sentencia simple o compuesta>.
+
+.image ../img/if1.svg 700 _
+
+  if ( <condión a evaluar> )
+    <sentencia simple o compuesta>
 
 * if - else (parte 2 de 3)
 
+*Sentencia*if*
+- Evaluamos una expresión, por lo general, booleana <condición a evaluar> (V o F).
+- Si la condición es verdadera, se ejecuta <sentencia simple o compuesta 1>.
+- Si la condición es falsa, se ejecuta <sentencia simple o compuesta 2>.
+
+.image ../img/if2.png 700 _
+
+  if ( <condición a evaluar )
+    <sentencia simple o compuesta 1>
+  else
+    <sentencia simple o compuest 2>
 
 * if - else (parte 3 de 3)
+.image ../img/if3.svg
 
+* switch - case
 
+* goto
+
+* do-while
+
+* for, break y continue (parte 1 de 3)
+
+* for, break y continue (parte 2 de 3)
+
+* for, break y continue (parte 3 de 3)
