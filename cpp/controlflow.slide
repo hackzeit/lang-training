@@ -12,8 +12,16 @@ frankmoreno1993@gmail.com
 * Hemos visto ...
 
 En secciones anteriores hemos visto que las instrucciones se ejecutan en el
-mismo orden en el que aparecen. Pero un programa no solo se limita a seguir
-una secuencias de pasos fija.
+mismo orden en el que aparecen.
+
+  <instrucción 1>;
+  <instrucción 2>;
+  <instrucción 3>;
+  ...
+
+Pero un programa no solo se limita a seguir una secuencias de pasos fija.
+
+¿Entonces qué más hace o debe hacer?
 
 * Un programa debe ser capaz de ...
 
@@ -81,35 +89,49 @@ Se categorizan en:
 
 * Sentencias de control
 
-* if - else (parte 1 de 3)
+* if - else (parte 1 de 4)
 
-*Sentencia*if*
-- Evaluamos una expresión, por lo general, booleana <condición a evaluar> (V o F).
-- Si la condición es verdadera, se ejecuta <sentencia simple o compuesta>.
+#*Sentencia*if*
+Sirver para tomar la decisión de ejecutar un segmente de código o no.
 
-.image ../img/if1.svg 700 _
+.image ../img/if1.png 350 _
 
-  if ( <condión a evaluar> )
-    <sentencia simple o compuesta>
+  if ( <condión a evaluar> ) // Por lo general boobleana (V o F).
+    <sentencia simple o compuesta> // Se evalúa su <condición a evaluar> es true (V).
 
-* if - else (parte 2 de 3)
 
-*Sentencia*if*
-- Evaluamos una expresión, por lo general, booleana <condición a evaluar> (V o F).
-- Si la condición es verdadera, se ejecuta <sentencia simple o compuesta 1>.
-- Si la condición es falsa, se ejecuta <sentencia simple o compuesta 2>.
+* if - else (parte 2 de 4)
 
-.image ../img/if2.png 700 _
+*Sentencias*if-else*
+Sirve para tomar la decisión de si se ejecuta un segmente u otro de código.
 
-  if ( <condición a evaluar )
-    <sentencia simple o compuesta 1>
+.image ../img/if2.png
+
+  if ( <condición a evaluar> ) // Por lo general booleana (V o F).
+    <sentencia simple o compuesta 1> // Se evalúa si <condición a evaluar> es true (V).
   else
-    <sentencia simple o compuest 2>
+    <sentencia simple o compuesta 2> // Se evalúa si <condición a evaluar> es false (F).
 
-* if - else (parte 3 de 3)
-.image ../img/if3.svg
+* if - else (parte 3 de 4)
 
-* switch - case
+*Sentencias*[if]-[else*if]-[else]*
+Sirve para tomar la decisión de elegir un segmente entre muchos de código a ejecutar.
+
+.image ../img/if3.png
+
+* if - else (parte 4 de 4)
+
+*Ejemplo*de*if*
+
+*Ejemplo*de*if-esle*
+
+*Ejemplo*de*if*-*else*if*-else*
+
+* switch - case (parte 1 de 3)
+
+* switch - case (parte 2 de 3)
+
+* switch - case (parte 3 de 3)
 
 * goto
 
