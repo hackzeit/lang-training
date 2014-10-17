@@ -1,5 +1,5 @@
-Tutorial de programas de programación
-=====================================
+Prolang - Tutorial de lenguajes de programación
+===============================================
 
 Este tutorial comprende los lenguajes C/C++ y Go. Se tratará de hacer una documentación
 extensa de los lenguajes y estarán lo mejor documentadas posibles.
