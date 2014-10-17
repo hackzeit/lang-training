@@ -1,0 +1,94 @@
+Introducción a C/C++
+Sentencias y control de flujo
+13:06 2 Oct 2014
+Tags: C, C++
+
+Frank A. Moreno Vera
+frankmoreno1993@gmail.com
+
+
+* Introducción
+
+* Hemos visto ...
+
+En secciones anteriores hemos visto que las instrucciones se ejecutan en el
+mismo orden en el que aparecen. Pero un programa no solo se limita a seguir
+una secuencias de pasos fija.
+
+* Un programa debe ser capaz de ...
+
+- Repetir segmentos de código
+- Tomar decisiones
+- y Bifurcarse (hacer saltos)
+
+Todo esto cuando se le sea especificado o bajo ciertas circunstancias.
+Para este propósito, C/C++ brinda sentencias para el *control*de*flujo*.
+
+* Hablemos sobre sentencias
+
+Muchas de las sentencias de control de flujo explicadas en esta sección
+requieren un (sub)conjunto genérico como parte de la sintaxis. Estas
+sentencias podrían ser una de ambas:
+
+- Una sentencia simple.
+- Sentencias compuestas.
+
+
+* Sentencias simples
+
+Las sentencias simple que terminan en punto y coma (`;`).
+
+Ejemplo:
+
+  // La declaración una variable
+  int a;
+
+  // Llamada a una función
+  int N = factorial(5);
+
+* Sentencias compuestas
+
+Es un grupo de sentencias simples (cada una con su propio punto y coma)
+limitadas por llaves(`{}`).
+
+Ejemplo:
+
+  // En una sola línea
+  { sentencia1; sentencia2; sentencia3; }
+
+  // En varias líneas
+  {
+    sentencia1;
+    sentencia2;
+    sentencia3;
+  }
+
+* Sentencias de control
+
+Se categorizan Categorías de las sentencias de control:
+
+- Sentencias de decisión(if-else y switch-case.md).
+- Sentencias de iteración (while, do-while y for).
+- Sentencias de salto (goto, break y continue).
+
+* El orden en el que veremos las sentencias de control son:
+- if-else
+- switch-case
+- goto
+- while
+- do-while
+- for, break y continue
+
+* Sentencias de control
+
+* if - else (parte 1 de 3)
+
+Iniciemos con la sentencia `if`
+.image ../img/if.svg
+
+* if - else (parte 2 de 3)
+
+
+* if - else (parte 3 de 3)
+
+
