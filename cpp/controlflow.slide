@@ -166,8 +166,24 @@ Y en este ejemplo vemos lo que pasa si dejamos casos sin sentencias a ejecutar.
 Notar que si x es 3, 4 o 5; ejecutará lo mismo.
 
 * goto
+Más que una sentencia del lenguaje es un intrucción derivada de assembly.
+
+
+* while (parte 1 de 2)
+Ejecuta una `<sentencia simple o compuesta>` si una `<condición a evaluar>` es verdadera.
+
+.image ../img/while.png
+
+  while ( <condición a evaluar> )
+    <sentecia simple o compuesta>
+
+* while (parte 2 de 2)
+
+.code controlflow/while.cpp /START 1/,/STOP 1/
+.code controlflow/while.cpp /START 2/,/STOP 2/
 
 * do-while
+
 
 * for, break y continue (parte 1 de 3)
 
