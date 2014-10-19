@@ -182,7 +182,20 @@ Ejecuta una `<sentencia simple o compuesta>` si una `<condición a evaluar>` es 
 .code controlflow/while.cpp /START 1/,/STOP 1/
 .code controlflow/while.cpp /START 2/,/STOP 2/
 
-* do-while
+* do-while (parte 1 de 2)
+Ejecuta una <sentencia simple o compuesta> y luego verifica la veracidad de una
+<condición a evaluar> para decidir si continúa ejecutándola.
+
+  do <sentencia simple o compuesta> while ( <condición a evaluar> )
+
+  do{
+    <sentencia simple o compuesta>
+  } while ( <condición a evaluar> )
+
+* do-while (parte 2 de 2)
+
+.code controlflow/do_while.cpp /START 1/,/STOP 1/
+.code controlflow/do_while.cpp /START 2/,/STOP 2/
 
 
 * for, break y continue (parte 1 de 3)
