@@ -1,10 +1,12 @@
 Introducción a C/C++
 Sentencias y control de flujo
-13:06 2 Oct 2014
-Tags: C, C++
+09:00 19 Oct 2014
+Tags: C, C++, control de flujo, if, while, for
 
 Frank A. Moreno Vera
+Geckoer en Geckotronics
 frankmoreno1993@gmail.com
+
 
 
 * Introducción
@@ -178,6 +180,13 @@ Y en este ejemplo vemos lo que pasa si dejamos casos sin sentencias a ejecutar.
 
 Notar que si x es 3, 4 o 5; ejecutará lo mismo.
 
+* if-else if-else vs switch-case
+Si comparamos los diagramas de flujo, ambas sentencias se parecen mucho.
+
+.image ../img/if_vs_switch.png
+
+Por lo tanto se recomienda usar el segundo diagrama para facilidad de lectura.
+
 * goto
 Más que una sentencia del lenguaje es un intrucción derivada de assembly.
 
@@ -224,7 +233,18 @@ Aclaración de `do-while` vs `while`:
 
 
 * for, break y continue (parte 1 de 3)
+Esta sentencia de control tiene una sección de `<inicialización>` que solo se
+ejecuta una vez. Luego verifica si una `<condición a evaluar>` es verdadera
+para ejecutar una `<sentencia simple o compuesta>` seguida de una instrucción
+de `<incremento>` (o decremento).
+
+.image ../img/for1.png
 
 * for, break y continue (parte 2 de 3)
+
+La forma de usarla es:
+
+  for( <inicialización> ; <condición a evaluar> ; <incremento> )
+    <sentencia simple o compuesta>
 
 * for, break y continue (parte 3 de 3)
