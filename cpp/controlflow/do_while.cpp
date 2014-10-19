@@ -8,7 +8,7 @@ void dowhile1() { // START 1 OMIT
   } while(i < 10) ;
 } // STOP 1 OMIT
 
-void dowhile2() {
+void dowhile2() { // OMIT
   int i = 0;
   do i++; while( i < 10);
   std::cout << i << std::endl;
@@ -16,4 +16,4 @@ void dowhile2() {
   i = 13;
   do i++; while(i < 10);
   std::cout << i << std::endl;
-}
+} // OMIT
