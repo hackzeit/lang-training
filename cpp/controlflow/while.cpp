@@ -8,7 +8,7 @@ void while1() { // START 1 OMIT
   }
 } // STOP 1 OMIT
 
-void while2() { // STOP 2 OMIT
+void while2() { // START 2 OMIT
   int i = 0;
   while ( i < 10 ) {
     std::cout << i << ", ";
