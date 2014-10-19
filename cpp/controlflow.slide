@@ -135,6 +135,19 @@ Sirve para tomar la decisión de elegir un segmente entre muchos de código a ej
 * switch - case (parte 1 de 5)
 Se usa para seleccionar uno o un conjunto de sentencias (simples o compuestas).
 
+.image ../img/switch.png 200 _
+
+  switch ( <valor a comparar> ) {
+    case <caso 1>:
+      <sentencia simple o compuesta>
+      break; // opcional
+    case <caso 2>:
+      <sentencia simple o compuesta>
+      break; // opcional
+    default: // Este caso es opcional si es que es necesario
+      <sentenica simple o compuesta>
+  }
+
 * switch - case (parte 2 de 5)
 
 En este ejemplo podemos apreciar si el valor de x está entre los casos especificados,
