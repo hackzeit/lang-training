@@ -204,7 +204,7 @@ Ejemplo de un contador ascendente:
 Ejecuta una <sentencia simple o compuesta> y luego verifica la veracidad de una
 <condición a evaluar> para decidir si continúa ejecutándola.
 
-.image ../do_while.png
+.image ../img/do_while.png 300 _
 
   do <sentencia simple> while ( <condición a evaluar> );
 
