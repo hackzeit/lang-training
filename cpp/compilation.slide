@@ -1,0 +1,60 @@
+Introducción a C/C++
+Proceso de compilación
+
+Frank Moreno
+Geckoer en Geckotronics
+
+* ¿Qué es compilación?
+La compilación es el proceso mediante el código de fuente se convierte en un
+archivo binario (o ejecutable).
+
+Para esta tarea existen algunos software llamados compiladores que ejecutan
+la tarea descrita.
+
+Los compiladores más conocidos son:
+
+Linux y OS X:
+
+  GCC - GNU Compiller Collection
+  G++ - Compillador de C++ parte de GCC
+
+Windows:
+
+  MinGW - Versión de GCC para Windows
+  Visual C++ compiller
+
+* Comando de compilación
+El formato para compilar un código en C++ simple es el siguiente:
+
+  g++ [-o <nombre del ejecutable>]  <nombre del archivo>.cpp
+
+En el caso de windows, es necesario escribir `g++.exe` en lugar de `g++`.
+
+Notas:
+
+- Lo que está entre corchetes `[]` es opcional.
+- Si no están los corchetes, el ejecutable se llamará a.out en linux.
+- Si no están los corchetes, el ejecutable se llamará ----- en windows.
+
+* Ejemplo de compilación
+Dado archivo `hola.cpp` con el ejemplo de `hola mundo`:
+
+.code hola/hola.cpp
+
+Generamos un archivo ejecutable con el siguiente formato:
+
+  g++ -o hola hola.cpp
+
+* Para ejecutarlo ...
+
+Ubicarse en la carpera del ejecutable, escribir:
+
+- En Linux:
+
+  ./hola
+
+  /ruta/completa/del/ejecutable/hola
+
+- En windows:
+
+  hola.exe

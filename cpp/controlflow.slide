@@ -243,7 +243,18 @@ La forma de usarla es:
   for( <inicialización> ; <condición a evaluar> ; <incremento> )
     <sentencia simple o compuesta>
 
+Lo cual equivale:
+
+  <inicialización>;
+  while ( <condición a evaluar> )
+  {
+    <sentencia simple o compuesta>
+    <incremento>
+  }
+
 * for, break y continue (parte 3 de 3)
+
+
 
 * goto (parte 1 de 2)
 Más que una sentencia del lenguaje es un instrucción derivada de assembly.
@@ -251,7 +262,7 @@ Sirve para indicar saltos en el programa.
 
 ¿Pero no hemos visto saltos o bifurcaciones, ya?
 Claro que los hemos visto. Todas las instrucciones de control hacen saltos,
-solo que no lo hemos dicho porque era más fácil entenderlos sin menionarlos.
+solo que no lo hemos dicho porque era más fácil entenderlos sin mencionarlos.
 
 
 * goto (parte 2 de 2)
