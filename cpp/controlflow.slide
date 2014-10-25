@@ -180,7 +180,7 @@ Y en este ejemplo vemos lo que pasa si dejamos casos sin sentencias a ejecutar.
 
 Notar que si x es 3, 4 o 5; ejecutará lo mismo.
 
-* if-else if-else vs switch-case
+* if-else vs switch-case
 Si comparamos los diagramas de flujo, ambas sentencias se parecen mucho.
 
 .image ../img/if_vs_switch.png
@@ -256,7 +256,7 @@ Lo cual equivale:
 
 
 
-* goto (parte 1 de 2)
+* goto (parte 1 de 5)
 Más que una sentencia del lenguaje es un instrucción derivada de assembly.
 Sirve para indicar saltos en el programa.
 
@@ -265,7 +265,7 @@ Claro que los hemos visto. Todas las instrucciones de control hacen saltos,
 solo que no lo hemos dicho porque era más fácil entenderlos sin mencionarlos.
 
 
-* goto (parte 2 de 2)
+* goto (parte 2 de 5)
 Por ejemplo, el siguiente for (y por lo tanto también while) ...
 
   // for(<inicial>; <condición>; <incremento>)
@@ -283,6 +283,23 @@ Por ejemplo, el siguiente for (y por lo tanto también while) ...
   Etiqueta:
   <sentencia simple o compuesta>
   if ( <condición> ) goto Etiqueta;
+
+* goto (parte 3 de 5)
+`goto` también sirve para entender como funciona switch-case.
+
+Recordando un ejemplo anterior de switch case:
+
+.code controlflow/switch.cpp /START 3/,/STOP 3/
+
+* goto (parte 4 de 5)
+Equivale a:
+
+.code controlflow/goto.cpp /START 1/,/STOP 1/
+
+* goto (parte 5 de 5)
+O también equivale a:
+
+.code controlflow/goto.cpp /START 2/,/STOP 2/
 
 * Observaciones
 
