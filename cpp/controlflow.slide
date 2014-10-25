@@ -228,7 +228,7 @@ Aclaración de `do-while` vs `while`:
 .code controlflow/do_while.cpp /void dowhile2/,/^}/
 
 
-* for, break y continue (parte 1 de 3)
+* for, break y continue (parte 1 de 4)
 Esta sentencia de control tiene una sección de `<inicialización>` que solo se
 ejecuta una vez. Luego verifica si una `<condición a evaluar>` es verdadera
 para ejecutar una `<sentencia simple o compuesta>` seguida de una instrucción
@@ -236,7 +236,7 @@ de `<incremento>` (o decremento).
 
 .image ../img/for1.png
 
-* for, break y continue (parte 2 de 3)
+* for, break y continue (parte 2 de 4)
 
 La forma de usarla es:
 
@@ -252,9 +252,26 @@ Lo cual equivale:
     <incremento>
   }
 
-* for, break y continue (parte 3 de 3)
+* for, break y continue (parte 3 de 4)
 
+Ejemplo de break:
 
+.code controlflow/for.cpp /^void for1/,/^}/
+
+Ejemplo de continue:
+
+.code controlflow/for.cpp /^void for2/,/^}/
+
+* for, break y continue (parte 4 de 4)
+
+Ejemplo clásico:
+
+.code controlflow/for.cpp /^void for3/,/^}/
+
+Ejemplos de rango (válido en C++11 o superior):
+
+.code controlflow/for.cpp /^void for4/,/^}/
+.code controlflow/for.cpp /^void for5/,/^}/
 
 * goto (parte 1 de 5)
 Más que una sentencia del lenguaje es un instrucción derivada de assembly.
