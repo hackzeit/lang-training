@@ -34,7 +34,18 @@ Notas:
 
 - Lo que está entre corchetes `[]` es opcional.
 - Si no están los corchetes, el ejecutable se llamará a.out en linux.
-- Si no están los corchetes, el ejecutable se llamará ----- en windows.
+- Si no están los corchetes, el ejecutable se llamará a.exe en windows.
+
+* Antes de compilar
+Hay que asegurarse que tengamos el compilador y saber en qué ruta se encuentra.
+
+En Linux:
+
+  export PATH=$PATH:/usr/bin
+
+En Windows:
+
+  path %path%;c:\Dev-Cpp\bin
 
 * Ejemplo de compilación
 Dado archivo `hola.cpp` con el ejemplo de `hola mundo`:
@@ -58,3 +69,68 @@ Ubicarse en la carpera del ejecutable, escribir:
 - En windows:
 
   hola.exe
+   
+  D:\ruta\completa\del\ejecutable\hola.exe
+
+* Primera biblioteca (parte 1 de 3)
+
+Sea el archivo aritmetica.cpp:
+
+.code compilation/aritmetica.cpp
+
+* Primera biblioteca (parte 2 de 3)
+
+Sea el archivo main.cpp:
+
+.code compilation/main.cpp
+
+* Primera biblioteca (parte 3 de 3)
+
+Empleando solo el código de fuente:
+
+  g++ -o ejem main.cpp aritmetica.cpp
+
+Compilando parte del código y compilango código con archivo tipo objeto:
+
+  g++ -c aritmetica.cpp
+  g++ -o ejem main.cpp aritmetica.o
+
+Compilando los archivos y compilado solo objetos:
+
+  g++ -c aritmetica.cpp
+  g++ -c main.cpp
+  g++ -o ejem main.o aritmetica.o
+
+* Imprimir archivos en multiples carpetas (parte 1 de 3)
+
+Creamos el archivo include/imprimir.h
+
+.code compilation/include/imprimir.h
+
+y el archivo src/imprimir.cpp
+
+.code compilation/src/imprimir.cpp
+
+* Compilación de la biblioteca interna
+
+Desde la carpeta de proyecto:
+
+  cd src
+  g++ -c imprimir.cpp -I../include
+
+Y para compilar el ejecutable volvemos al projecto con `cd ..` y:
+
+  g++ -c main.cpp
+  g++ -c artimetica.cpp
+  g++ -o ejem main.o aritmetica.o src/imprimir.o
+
+* Compilación de una biblioteca externa
+
+Compilamos la bibliteca imprimir con extención `.a` :
+
+  cd src
+  g++ -c imprimir.cpp -o libimprimir.c -I../include
+
+Luego volvemos al proyecto con `cd ..` y:
+
+  g++ -o ejem main.o aritmetica.o -Lsrc -limprimir
