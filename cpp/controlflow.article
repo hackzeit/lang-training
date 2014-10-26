@@ -1,0 +1,299 @@
+Introducción a C/C++
+Sentencias y control de flujo
+09:00 19 Oct 2014
+Tags: C, C++, control de flujo, if, while, for
+
+Frank A. Moreno Vera
+Geckoer en Geckotronics
+frankmoreno1993@gmail.com
+@kranfix
+
+
+* Introducción
+
+En secciones anteriores hemos visto que las instrucciones se ejecutan en el
+mismo orden en el que aparecen.
+
+  <instrucción 1>;
+  <instrucción 2>;
+  <instrucción 3>;
+  ...
+
+Pero un programa no solo se limita a seguir una secuencias de pasos fija.
+
+** ¿Entonces qué más hace o debe hacer?
+
+Un programa debe ser capaz de:
+
+- Repetir segmentos de código
+- Tomar decisiones
+- y Bifurcarse (hacer saltos)
+
+Todo esto cuando se le sea especificado o bajo ciertas circunstancias.
+Para este propósito, C/C++ brinda sentencias para el *control*de*flujo*.
+
+** Hablemos sobre sentencias
+
+Muchas de las sentencias de control de flujo explicadas en esta sección
+requieren un (sub)conjunto genérico como parte de la sintaxis. Estas
+sentencias podrían ser una de ambas:
+
+- Una sentencia simple.
+- Sentencias compuestas.
+
+
+*** Sentencias simples
+
+Las sentencias simple que terminan en punto y coma (`;`).
+
+Ejemplo:
+
+  // La declaración una variable
+  int a;
+
+  // Llamada a una función
+  int N = factorial(5);
+
+*** Sentencias compuestas
+
+Es un grupo de sentencias simples (cada una con su propio punto y coma)
+limitadas por llaves(`{}`).
+
+Ejemplo:
+
+  // En una sola línea
+  { sentencia1; sentencia2; sentencia3; }
+
+  // En varias líneas
+  {
+    sentencia1;
+    sentencia2;
+    sentencia3;
+  }
+
+* Sentencias de control
+
+Se categorizan en:
+
+- Sentencias de decisión(if-else y switch-case.md).
+- Sentencias de iteración (while, do-while y for).
+- Sentencias de salto (goto, break y continue).
+
+** if - else
+
+*** Sentencia if
+Sirver para tomar la decisión de ejecutar un segmente de código o no.
+
+.image ../img/if1.png 350 _
+
+  if ( <condión a evaluar> ) // Por lo general boobleana (V o F).
+    <sentencia simple o compuesta> // Se evalúa su <condición a evaluar> es true (V).
+
+
+*** Sentencias if-else
+Sirve para tomar la decisión de si se ejecuta un segmente u otro de código.
+
+.image ../img/if2.png
+
+  if ( <condición a evaluar> ) // Por lo general booleana (V o F).
+    <sentencia simple o compuesta 1> // Se evalúa si <condición a evaluar> es true (V).
+  else
+    <sentencia simple o compuesta 2> // Se evalúa si <condición a evaluar> es false (F).
+
+*** Sentencias if-else if-else
+Sirve para tomar la decisión de elegir un segmente entre muchos de código a ejecutar.
+
+.image ../img/if3.png 300 _
+
+  if ( <condición a evaluar 1> ) <sentencia simple o compuesta 1>
+  else if ( <condición a evaluar 2> ) <sentencia simple o compuesta 2>
+  else if ( <condición a evaluar 3> ) <sentencia simple o compuesta 3>
+  else <sentencia simple o compuesta 4>
+
+*** Ejemplos de if-else
+
+.code controlflow/if.cpp /START if1/,/STOP if1/
+.code controlflow/if.cpp /START if2/,/STOP if2/
+.code controlflow/if.cpp /START if3/,/STOP if3/
+
+** switch - case
+Se usa para seleccionar uno o un conjunto de sentencias (simples o compuestas).
+
+.image ../img/switch.png 200 _
+
+  switch ( <valor a comparar> ) {
+    case <caso 1>:
+      <sentencia simple o compuesta>
+      break; // opcional
+    case <caso 2>:
+      <sentencia simple o compuesta>
+      break; // opcional
+    default: // Este caso es opcional si es que es necesario
+      <sentenica simple o compuesta>
+  }
+
+
+En este ejemplo podemos apreciar si el valor de x está entre los casos especificados,
+ejecutará la o las sentecias que se le han asignado a cada caso.
+
+.code controlflow/switch.cpp /START 1/,/STOP 1/
+
+La instrucción `break;` sirve para indicar que va a salir del switch-case.
+
+Este ejemplo hace lo mismo que el anterior con la única diferencia que ahora le
+estamos indicando que hacer en el caso que la variable x no se encuentre en la lista
+de casos. Para esto se usa la palabra `default`.
+
+.code controlflow/switch.cpp /START 2/,/STOP 2/
+
+Nota: `default` debe ser el último caso dentro del `switch-case`.
+
+*** Ejemplos de switch - case
+En este caso veremos lo que pasa cuando omitimos el `break;`.
+
+.code controlflow/switch.cpp /START 3/,/STOP 3/
+
+Y en este ejemplo vemos lo que pasa si dejamos casos sin sentencias a ejecutar.
+
+.code controlflow/switch.cpp /START 4/,/STOP 4/
+
+Notar que si x es 3, 4 o 5; ejecutará lo mismo.
+
+** if-else vs switch-case
+Si comparamos los diagramas de flujo, ambas sentencias se parecen mucho.
+
+.image ../img/if_vs_switch.png
+
+Por lo tanto se recomienda usar el segundo diagrama para facilidad de lectura.
+
+** while
+Ejecuta una `<sentencia simple o compuesta>` si una `<condición a evaluar>` es verdadera.
+
+.image ../img/while.png
+
+  while ( <condición a evaluar> )
+    <sentecia simple o compuesta>
+
+*** Ejemplos de while
+Ejemplo de un contador decreciente:
+
+.code controlflow/while.cpp /START 1/,/STOP 1/
+
+Ejemplo de un contador ascendente:
+
+.code controlflow/while.cpp /START 2/,/STOP 2/
+
+** do-while
+Ejecuta una <sentencia simple o compuesta> y luego verifica la veracidad de una
+<condición a evaluar> para decidir si continúa ejecutándola.
+
+.image ../img/do_while.png 300 _
+
+  do <sentencia simple> while ( <condición a evaluar> );
+
+  do{
+    <sentencia compuesta>
+  } while ( <condición a evaluar> );
+
+*** Ejemplos de do-while
+
+Ejemplo de un contador ascendente:
+
+.code controlflow/do_while.cpp /START 1/,/STOP 1/
+
+Aclaración de `do-while` vs `while`:
+
+.code controlflow/do_while.cpp /void dowhile2/,/^}/
+
+
+** for, break y continue
+Esta sentencia de control tiene una sección de `<inicialización>` que solo se
+ejecuta una vez. Luego verifica si una `<condición a evaluar>` es verdadera
+para ejecutar una `<sentencia simple o compuesta>` seguida de una instrucción
+de `<incremento>` (o decremento).
+
+.image ../img/for1.png
+
+*** forma de uso
+
+La forma de usarla es:
+
+  for( <inicialización> ; <condición a evaluar> ; <incremento> )
+    <sentencia simple o compuesta>
+
+Lo cual equivale:
+
+  <inicialización>;
+  while ( <condición a evaluar> )
+  {
+    <sentencia simple o compuesta>
+    <incremento>
+  }
+
+*** Ejemplo de break y continue
+
+Ejemplo de break:
+
+.code controlflow/for.cpp /^void for1/,/^}/
+Ejemplo de continue:
+
+.code controlflow/for.cpp /^void for2/,/^}/
+
+*** Ejemplos de for (clásico y por rango)
+
+Ejemplo clásico:
+
+.code controlflow/for.cpp /^void for3/,/^}/
+
+Ejemplos de rango (válido en C++11 o superior):
+
+.code controlflow/for.cpp /^void for4/,/^}/
+.code controlflow/for.cpp /^void for5/,/^}/
+
+** goto
+Más que una sentencia del lenguaje es un instrucción derivada de assembly.
+Sirve para indicar saltos en el programa.
+
+¿Pero no hemos visto saltos o bifurcaciones, ya?
+Claro que los hemos visto. Todas las instrucciones de control hacen saltos,
+solo que no lo hemos dicho porque era más fácil entenderlos sin mencionarlos.
+
+Por ejemplo, el siguiente for (y por lo tanto también while) ...
+
+  // for(<inicial>; <condición>; <incremento>)
+  //     <sentencia simple o compuesta>
+  <inicial>;
+  Etiqueta:
+  if ( <condición> ) {
+    <sentencia simple o compuesta>
+    goto Etiqueta;
+  }
+
+¿Y se puede hacer do-while con goto?
+
+  // do { <sentencia simple o compuesta} while ( <condición> );
+  Etiqueta:
+  <sentencia simple o compuesta>
+  if ( <condición> ) goto Etiqueta;
+
+*** Ejemplo de goto
+
+`goto` también sirve para entender como funciona switch-case.
+Recordando un ejemplo anterior de switch case:
+
+.code controlflow/switch.cpp /START 3/,/STOP 3/
+
+Equivale a:
+
+.code controlflow/goto.cpp /START 1/,/STOP 1/
+
+O también equivale a:
+
+.code controlflow/goto.cpp /START 2/,/STOP 2/
+
+* Observaciones
+- Lenguajes modernos ya no tienen `do-while` porque se puede hacer con `while`.
+- Lenguaje como Go (a.k.a. Golang) no usan `while` porque `for` es suficiente.
+- Usar la instrucción goto es peligrosa cuando hay duplicidad de etiquetas.
+- Lenguajes modernos ya no contienen `goto`.
+- y si lo tienen, están restringidos a ciertos espacios limitado por llaves.
