@@ -3,6 +3,7 @@ Proceso de compilación
 
 Frank Moreno
 Geckoer en Geckotronics
+@kranfix
 
 * ¿Qué es compilación?
 La compilación es el proceso mediante el código de fuente se convierte en un
@@ -23,9 +24,59 @@ Windows:
   MinGW - Versión de GCC para Windows
   Visual C++ compiller
 
-* Estructura de archivos para el ejemplo
+* Comando de compilación
+El formato para compilar un código en C++ simple es el siguiente:
 
-Dado los archivos ordenados de la siguiente manera:
+  g++ [-o <nombre del ejecutable>]  <nombre del archivo>.cpp
+
+En el caso de windows, es necesario escribir `g++.exe` en lugar de `g++`.
+
+Notas:
+
+- Lo que está entre corchetes `[]` es opcional.
+- Si no aparece -o <nombre del archivo del ejecutable>, la salida será:
+  - En Linux y OS X:  a.out
+  - En Windows: a.exe
+
+* Antes de compilar
+Hay que asegurarse que tengamos el compilador y saber en qué ruta se encuentra.
+
+En Linux:
+
+  export PATH=$PATH:/usr/bin
+
+En Windows:
+
+  path %path%;c:\Dev-Cpp\bin
+
+* Primer ejemplo de compilación
+Dado archivo `hola.cpp` con el ejemplo de `hola mundo`:
+
+.code hola/hola.cpp
+
+Generamos un archivo ejecutable con el siguiente formato:
+
+  g++ -o hola hola.cpp
+
+* Para ejecutarlo ...
+
+Ubicarse en la carpera del ejecutable, escribir:
+
+- En Linux:
+
+  ./hola
+
+  /ruta/completa/del/ejecutable/hola
+
+- En windows:
+
+  hola.exe
+   
+  D:\ruta\completa\del\ejecutable\hola.exe
+
+* Ejemplo más complejo de compilación
+
+Para este ejemplo crearemos un proyecto con esta estructura de archivos:
 
   ├── projecto
     │ ├── aritmetica.h
@@ -35,6 +86,14 @@ Dado los archivos ordenados de la siguiente manera:
     │ │   ├── imprimir.h
     │ └── src
     │     ├── imprimir.cpp
+
+
+Notar que tenemos:
+
+  - Bibliotecas:
+    - aritmetica: `aritmetica.h` y `aritmetica.cpp`
+    - imprimir: `include/imprimir.h` e `src/imprimir.cpp`
+  - Código principal: `main.cpp`
 
 Pasaremos a mostrar algunos comandos para compilar el proyecto desde consola.
 Pero primero veamos el contenido de los archivos.
@@ -71,83 +130,85 @@ En el archivo main usamos deifinimos todas las funciones ya creadas:
 
 .code compilation/main.cpp
 
-* Comando de compilación
-El formato para compilar un código en C++ simple es el siguiente:
+Nota:
 
-  g++ [-o <nombre del ejecutable>]  <nombre del archivo>.cpp
+- Funciones suma y resta están en aritmetica.h
+- Función imprimir está en include/imprimir.h
 
-En el caso de windows, es necesario escribir `g++.exe` en lugar de `g++`.
+* Compilación por código de fuente
 
-Notas:
+Solo con el código de fuente
 
-- Lo que está entre corchetes `[]` es opcional.
-- Si no están los corchetes, el ejecutable se llamará a.out en linux.
-- Si no están los corchetes, el ejecutable se llamará a.exe en windows.
+  ejem: main.cpp aritmetica.cpp src/imprimir.cpp
+  	  g++ -o ejem main.cpp aritmetica.cpp src/imprimir.cpp -Iinclude
 
-* Antes de compilar
-Hay que asegurarse que tengamos el compilador y saber en qué ruta se encuentra.
+Con `-Iinclude` estamos indicando que buscará archivos `.h` dentro de include.
+Y en este caso es necesitado por `main.cpp` y `src/imprimir.cpp`.
 
-En Linux:
+Esta forma de compilación tiene una deficiencia, la cual es que si hay algún
+error de compilación, hay que volver a compilar todo trás corregirlo.
 
-  export PATH=$PATH:/usr/bin
+* Compilación juntando código y archivos objeto (parte 1 de 5)
 
-En Windows:
+*Archivos*tipo*objeto:*
 
-  path %path%;c:\Dev-Cpp\bin
+Esto archivos son el resultado de una compilación de código de fuente donde
+no se definido la función `int main()`.
 
-* Ejemplo de compilación
-Dado archivo `hola.cpp` con el ejemplo de `hola mundo`:
+Para compilarlos se usa la siguiente estructura:
 
-.code hola/hola.cpp
+   g++ -c fuente1.cpp fuente2.cpp archivo1.o [-o <salida.o>]
 
-Generamos un archivo ejecutable con el siguiente formato:
+De no especificar <salida.o>, tendrá el mismo nombre que el primer archivo
+`.cpp`. En este caso la salida sería `fuente1.o`.
 
-  g++ -o hola hola.cpp
+* Compilación juntando código y archivos objeto (parte 2 de 5)
 
-* Para ejecutarlo ...
+*Compilemos*aritmetica:*
 
-Ubicarse en la carpera del ejecutable, escribir:
+  aritmetica.o: aritmetica.cpp aritmetica.h
+  	  g++ -c aritmetica.cpp [-o aritmetica.o]
 
-- En Linux:
+El flag `-c` indica que la salida es un código tipo objeto el cual no es
+ejecutable (y no lo es porque no tiene función).
 
-  ./hola
+* Compilación juntando código y archivos objeto (parte 3 de 5)
 
-  /ruta/completa/del/ejecutable/hola
+*Compilemos*imprimir:*
 
-- En windows:
+  src/imprimir.o: src/imprimir.cpp include/imprimir.h
+          cd src                            # Nos movemos a la carpeta src
+          g++ -c imprimir.cpp -I../include  # Estamos en la carpeta src
+          cd ..                             # regresamos al proyecto
 
-  hola.exe
-   
-  D:\ruta\completa\del\ejecutable\hola.exe
+No especificamos la salida. Se crea el archivo `imprimir.o`.
 
-* Primera biblioteca (parte 1 de 3)
+Dado que en `imprimir.cpp` se llama la biblioteca `imprimir.h` así:
 
-Sea el archivo aritmetica.cpp:
+  #include <imprimir.h> // Se encuentra en ../include respecto a src
 
-.code compilation/aritmetica.cpp
+El compilador no sabe donde encontrarla. Pero se le indice con `-I../include`.
 
-* Primera biblioteca (parte 2 de 3)
+* Compilación juntando código y archivos objeto (parte 4 de 5)
 
-Sea el archivo main.cpp:
+*Compilemos*el*ejecutabe:*
 
-.code compilation/main.cpp
+  ejem: main.cpp aritmetica.o src/imprimir.o
+          g++ -o ejem main.cpp aritmetica.o src/imprimir.o
 
-* Primera biblioteca (parte 3 de 3)
+O también:
 
-Empleando solo el código de fuente:
+  main.o: main.cpp aritmetica.h include/imprimir.h
+          g++ -c main.cpp
 
-  g++ -o ejem main.cpp aritmetica.cpp
+y luego:
 
-Compilando parte del código y compilango código con archivo tipo objeto:
+  ejem: main.o aritmetica.o src/imprimir.o
+          g++ -o ejem main.o aritmetica.o src/imprimir.o
 
-  g++ -c aritmetica.cpp
-  g++ -o ejem main.cpp aritmetica.o
+Notar que `main.cpp` también llama a `include/imprimir.h` pero lo hace así:
 
-Compilando los archivos y compilado solo objetos:
-
-  g++ -c aritmetica.cpp
-  g++ -c main.cpp
-  g++ -o ejem main.o aritmetica.o
+  #include "include/imprimir.h" // se especifica la carpeta include
 
 * Imprimir archivos en multiples carpetas (parte 1 de 3)
 
@@ -158,27 +219,3 @@ Creamos el archivo include/imprimir.h
 y el archivo src/imprimir.cpp
 
 .code compilation/src/imprimir.cpp
-
-* Compilación de la biblioteca interna
-
-Desde la carpeta de proyecto:
-
-  cd src
-  g++ -c imprimir.cpp -I../include
-
-Y para compilar el ejecutable volvemos al projecto con `cd ..` y:
-
-  g++ -c main.cpp
-  g++ -c artimetica.cpp
-  g++ -o ejem main.o aritmetica.o src/imprimir.o
-
-* Compilación de una biblioteca externa
-
-Compilamos la bibliteca imprimir con extención `.a` :
-
-  cd src
-  g++ -c imprimir.cpp -o libimprimir.c -I../include
-
-Luego volvemos al proyecto con `cd ..` y:
-
-  g++ -o ejem main.o aritmetica.o -Lsrc -limprimir
