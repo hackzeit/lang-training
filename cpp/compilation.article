@@ -24,7 +24,7 @@ Windows:
   MinGW - Versión de GCC para Windows
   Visual C++ compiller
 
-* Comando de compilación
+* Comando de compilación básico
 El formato para compilar un código en C++ simple es el siguiente:
 
   g++ [-o <nombre del ejecutable>]  <nombre del archivo>.cpp
@@ -38,7 +38,7 @@ Notas:
   - En Linux y OS X:  a.out
   - En Windows: a.exe
 
-* Antes de compilar
+** Antes de compilar
 Hay que asegurarse que tengamos el compilador y saber en qué ruta se encuentra.
 
 En Linux:
@@ -58,7 +58,7 @@ Generamos un archivo ejecutable con el siguiente formato:
 
   g++ -o hola hola.cpp
 
-* Para ejecutarlo ...
+** Ejecutar ejemplo simple
 
 Ubicarse en la carpera del ejecutable, escribir:
 
@@ -74,7 +74,7 @@ Ubicarse en la carpera del ejecutable, escribir:
    
   D:\ruta\completa\del\ejecutable\hola.exe
 
-* Ejemplo más complejo de compilación
+** Ejemplo más complejo de compilación
 
 Para este ejemplo crearemos un proyecto con esta estructura de archivos:
 
@@ -98,7 +98,7 @@ Notar que tenemos:
 Pasaremos a mostrar algunos comandos para compilar el proyecto desde consola.
 Pero primero veamos el contenido de los archivos.
 
-* Biblioteca aritmetica
+** Biblioteca aritmetica
 
 Archivo aritmética.h (header o cabecera):
 
@@ -114,7 +114,7 @@ Nota:
 - Por lo que su compilado no tiene ejecutable.
 - Los archivos están en la misma carpeta.
 
-* Biblioteca imprimir
+** Biblioteca imprimir
 
 Archivo include/imprimir.h
 
@@ -124,7 +124,7 @@ Archivo src/imprimir.cpp
 
 .code compilation/src/imprimir.cpp
 
-* Archivo main
+** Archivo main
 
 En el archivo main usamos deifinimos todas las funciones ya creadas:
 
@@ -148,9 +148,9 @@ Y en este caso es necesitado por `main.cpp` y `src/imprimir.cpp`.
 Esta forma de compilación tiene una deficiencia, la cual es que si hay algún
 error de compilación, hay que volver a compilar todo trás corregirlo.
 
-* Compilación juntando código y archivos objeto (parte 1 de 5)
+* Compilación juntando código y archivos objeto
 
-*Archivos*tipo*objeto:*
+** Archivos tipo objeto
 
 Esto archivos son el resultado de una compilación de código de fuente donde
 no se definido la función `int main()`.
@@ -162,9 +162,7 @@ Para compilarlos se usa la siguiente estructura:
 De no especificar <salida.o>, tendrá el mismo nombre que el primer archivo
 `.cpp`. En este caso la salida sería `fuente1.o`.
 
-* Compilación juntando código y archivos objeto (parte 2 de 5)
-
-*Compilemos*aritmetica:*
+** Compilemos aritmetica
 
   aritmetica.o: aritmetica.cpp aritmetica.h
   	  g++ -c aritmetica.cpp [-o aritmetica.o]
@@ -172,9 +170,7 @@ De no especificar <salida.o>, tendrá el mismo nombre que el primer archivo
 El flag `-c` indica que la salida es un código tipo objeto el cual no es
 ejecutable (y no lo es porque no tiene función).
 
-* Compilación juntando código y archivos objeto (parte 3 de 5)
-
-*Compilemos*imprimir:*
+** Compilemos imprimir
 
   src/imprimir.o: src/imprimir.cpp include/imprimir.h
           cd src                            # Nos movemos a la carpeta src
@@ -189,9 +185,7 @@ Dado que en `imprimir.cpp` se llama la biblioteca `imprimir.h` así:
 
 El compilador no sabe donde encontrarla. Pero se le indice con `-I../include`.
 
-* Compilación juntando código y archivos objeto (parte 4 de 5)
-
-*Compilemos*el*ejecutabe:*
+** Compilemos el ejecutabe
 
   ejem: main.cpp aritmetica.o src/imprimir.o
           g++ -o ejem main.cpp aritmetica.o src/imprimir.o
