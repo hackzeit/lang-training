@@ -47,6 +47,24 @@ Archivo aritmética.h (header o cabecera):
 
 Archivo aritmetica.cpp
 
+.code compilation/aritmetica.cpp
+
+Nota:
+
+- No hay función main.
+- Por lo que su compilado no tiene ejecutable.
+- Los archivos están en la misma carpeta.
+
+* Biblioteca imprimir
+
+Archivo include/imprimir.h
+
+.code compilation/include/imprimir.h
+
+Archivo src/imprimir.cpp
+
+.code compilation/src/imprimir.cpp
+
 * Comando de compilación
 El formato para compilar un código en C++ simple es el siguiente:
 
