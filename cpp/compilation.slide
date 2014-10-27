@@ -23,6 +23,30 @@ Windows:
   MinGW - Versión de GCC para Windows
   Visual C++ compiller
 
+* Estructura de archivos para el ejemplo
+
+Dado los archivos ordenados de la siguiente manera:
+
+  ├── projecto
+    │ ├── aritmetica.h
+    │ ├── aritmetica.cpp
+    │ ├── main.cpp
+    │ ├── include
+    │ │   ├── imprimir.h
+    │ └── src
+    │     ├── imprimir.cpp
+
+Pasaremos a mostrar algunos comandos para compilar el proyecto desde consola.
+Pero primero veamos el contenido de los archivos.
+
+* Biblioteca aritmetica
+
+Archivo aritmética.h (header o cabecera):
+
+.code compilation/aritmetica.h
+
+Archivo aritmetica.cpp
+
 * Comando de compilación
 El formato para compilar un código en C++ simple es el siguiente:
 
