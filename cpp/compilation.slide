@@ -65,6 +65,12 @@ Archivo src/imprimir.cpp
 
 .code compilation/src/imprimir.cpp
 
+* Archivo main
+
+En el archivo main usamos deifinimos todas las funciones ya creadas:
+
+.code compilation/main.cpp
+
 * Comando de compilación
 El formato para compilar un código en C++ simple es el siguiente:
 
