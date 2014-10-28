@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void asignacion1() { // OMIT
   int a,b;   // a:?,  b:?
   a = 10;    // a:10, b:?
