@@ -203,3 +203,25 @@ y luego:
 Notar que `main.cpp` también llama a `include/imprimir.h` pero lo hace así:
 
   #include "include/imprimir.h" // se especifica la carpeta include
+
+* Bibliotecas con extensión .a
+
+Las bibliotecas con extensión `.a` se compilan igual que las que tiene
+extensión `.o` con la diferencia que se estila ponerle nombre con el formato:
+
+  lib<nombre>.a en ves de <nombre>.o
+
+*¿Porqué?*
+Pues para compilar todo haríamos lo siguiente:
+
+  cd src
+  g++ -c imprimir.cpp -o libimprimir.a -I../include
+  cd ..
+  g++ -o ejem main.o factorial.o -Lsrc -limprimir
+    
+Notar que `-L<directorio>` indica el lugar donde buscar archivos `.a` con el
+formato `-l<nombre>`, estamos indicando que llamamos a la librería:
+
+  <directorio> == src               =>    -L<directorio> == -Lsrc
+  lib<nombre>.a == libimprimir.a    =>    -l<nombre> == -limprimir
+
