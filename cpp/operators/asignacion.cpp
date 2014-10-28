@@ -13,7 +13,13 @@ void asignacion2() { // OMIT
   // n = p;     // m:?, n:5, p:5
   // m = n;     // m:5, n:5, p:5
   m = n = p = 5;
+  printf("m:%d\tn:%d\tp:%d\n",m,n,p);
 } // OMIT
 
 void asignacion3() { // OMIT
+  int x,y;        // x:?, y:?
+  // x = 5;       // x:5, y:?
+  // y = 2 + x;   // x:5, y:7
+  y = 2 + (x = 5);
+  printf("x:%d\ty:%d\n",x,y);
 } // OMIT
