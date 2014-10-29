@@ -13,4 +13,10 @@ void decremento() { // OMIT
   x = 3;
   y = --x;  // x:2, y:2
   z = x--;  // x:1, z:2
+  printf("x:%d\ty:%d\tz:%d\n",x,y,z);
 } // OMIT
+
+int main() {
+  incremento();
+  decremento();
+}

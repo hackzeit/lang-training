@@ -25,3 +25,9 @@ void asignacion3() { // OMIT
   y = 2 + (x = 5);
   printf("x:%d\ty:%d\n",x,y);
 } // OMIT
+
+int main() {
+  asignacion1();
+  asignacion2();
+  asignacion3();
+}
