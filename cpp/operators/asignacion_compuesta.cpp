@@ -15,7 +15,12 @@ void shift() { // OMIT
 } // OMIT
 
 void bitwise() { // OMIT
-
+  unsigned char a = 97;
+  unsigned char b = 217;
+  a |= b;
+  b &= 34;
+  a ^= b;
+  printf("a = %d\tb = %d\n",a,b);
 } // OMIT
 
 int main() {
