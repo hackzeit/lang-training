@@ -1,0 +1,34 @@
+Introducción a C/C++
+Operadores
+
+Frank Moreno
+Geckoer en Geckotronics
+
+* Lista de operadores
+
+- Operador de asignación (=)
+- Operadores aritméticos (+, -, /, %)
+- Incremento y decremento (++, --)
+- Operadores relacionales y de comparación (==, !=, >, <, >=, <=)
+- Operador condicionel ternario (?:)
+- Operadores lógicos ( !, &&, ||)
+- Operadores bit a bit ( &, |, ^, ~, <<, >>)
+- Asignación compuesta ( +=, -=, *=, /=, %=, >>=, <<=, &=, ^=, |=)
+- Operador coma (,)
+
+* Operadores aritméticos
+
+*Para*enteros:*
+
+.code operators/aritmeticos.cpp /void aritmeticos_int/,/^}/
+
+*Para*flotantes:*
+
+.code operators/aritmeticos.cpp /void aritmeticos_float/,/^}/
+
+* Operadores lógicos
+
+* Operadores bit a bit
+Tenemos los siguientes operadores:
+
+  
