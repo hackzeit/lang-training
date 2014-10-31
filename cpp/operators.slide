@@ -16,6 +16,8 @@ Geckoer en Geckotronics
 - Asignación compuesta ( +=, -=, *=, /=, %=, >>=, <<=, &=, ^=, |=)
 - Operador coma (,)
 
+* Operador de asignación
+
 * Operadores aritméticos
 
 *Para*enteros:*
@@ -27,6 +29,16 @@ Geckoer en Geckotronics
 .code operators/aritmeticos.cpp /void aritmeticos_float/,/^}/
 
 * Operadores lógicos
+
+* Operadores relacionales y de comparación
+
+*Comparación:*
+
+.code operators/comp_relacional.c /void comp/,/^}/
+
+*Relacionales:*
+
+.code operators/comp_relacional.c /void relacional/,/^}/
 
 * Operadores bit a bit
 Tenemos los siguientes operadores:
