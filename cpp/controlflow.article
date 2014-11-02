@@ -136,7 +136,7 @@ Se usa para seleccionar uno o un conjunto de sentencias (simples o compuestas).
 En este ejemplo podemos apreciar si el valor de x está entre los casos especificados,
 ejecutará la o las sentecias que se le han asignado a cada caso.
 
-.code controlflow/switch.cpp /START 1/,/STOP 1/
+.code controlflow/switch.c /START 1/,/STOP 1/
 
 La instrucción `break;` sirve para indicar que va a salir del switch-case.
 
@@ -144,18 +144,18 @@ Este ejemplo hace lo mismo que el anterior con la única diferencia que ahora le
 estamos indicando que hacer en el caso que la variable x no se encuentre en la lista
 de casos. Para esto se usa la palabra `default`.
 
-.code controlflow/switch.cpp /START 2/,/STOP 2/
+.code controlflow/switch.c /START 2/,/STOP 2/
 
 Nota: `default` debe ser el último caso dentro del `switch-case`.
 
 *** Ejemplos de switch - case
 En este caso veremos lo que pasa cuando omitimos el `break;`.
 
-.code controlflow/switch.cpp /START 3/,/STOP 3/
+.code controlflow/switch.c /START 3/,/STOP 3/
 
 Y en este ejemplo vemos lo que pasa si dejamos casos sin sentencias a ejecutar.
 
-.code controlflow/switch.cpp /START 4/,/STOP 4/
+.code controlflow/switch.c /START 4/,/STOP 4/
 
 Notar que si x es 3, 4 o 5; ejecutará lo mismo.
 
@@ -281,7 +281,7 @@ Por ejemplo, el siguiente for (y por lo tanto también while) ...
 `goto` también sirve para entender como funciona switch-case.
 Recordando un ejemplo anterior de switch case:
 
-.code controlflow/switch.cpp /START 3/,/STOP 3/
+.code controlflow/switch.c /START 3/,/STOP 3/
 
 Equivale a:
 
