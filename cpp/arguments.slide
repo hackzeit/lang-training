@@ -90,6 +90,21 @@ Detalles a tener en cuenta respecto a los valores de retorno de main:
 
 * Programando (parte 2 de 4)
 
+*En*caso*de*suma:*
+
+.code arguments/arguments.c /START SUM/,/STOP SUM/
+
+*En*caso*de*resta:*
+
+.code arguments/arguments.c /START RES/,/STOP RES/
+
+*En*caso*de*multiplicación:*
+
+.code arguments/arguments.c /START MUL/,/STOP MUL/
+
+*En*caso*de*división:*
+
+.code arguments/arguments.c /START DIV/,/STOP DIV/
+
   Seleccionar que el tipo de operación (s,r,m,d).
-  Ejecutar la operación aritmética.
   imprimir el resultado de la operación.

@@ -25,21 +25,19 @@ int main(int argc, char **argv){
     case 's':
       // START SUM OMIT
       v = 0;
-      for (int i = 0; i < n; i++)
-        v += A[i];
+      for (int i = 0; i < n; i++)  v += A[i];
       // STOP SUM OMIT
       break;
     case 'r':
       // START RES OMIT
       v = A[0] - A[1];
-      // STOP RES OMIT 
+      // STOP RES OMIT
       break;
     case 'm':
       // START MUL OMIT
       v = 1;
-      for (int i = 0; i < n; i++)
-        v *= A[i];
-      // STOP MUL OMMIT
+      for (int i = 0; i < n; i++)  v *= A[i];
+      // STOP MUL OMIT
       break;
     case 'd':
       // START DIV OMIT
