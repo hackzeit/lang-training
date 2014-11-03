@@ -55,3 +55,21 @@ siguiente formato:
   #           y verifica que no se haga división por cero ( 0 )
   $ arit d 6 2 7
   3
+
+
+* Planificación de la solución
+
+Los pasos a seguir son:
+
+  Verificas que la mínima cantidad de argumentos sean 4.
+  Decidir cuantos números se operan.
+  Iniciar a convertir y almacenar los número escritos como `char arrays` a `int`.
+  Seleccionar que el tipo de operación (s,r,m,d).
+  Ejecutar la operación aritmética.
+  imprimir el resultado de la operación.
+
+Detalles a tener en cuenta respecto a los valores de retorno de main:
+
+  return 1: número de argumentos es menos al mínimo necesario (4).
+  return 2: la operación indicada no es reconocida o no es soportada.
+  return 3: cuando se intenta realizar una división por cero (0).
