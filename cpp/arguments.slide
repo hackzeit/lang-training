@@ -1,0 +1,34 @@
+Argumentos por consola
+Tags: C, C++, control de flujo, if, while, for
+
+Frank A. Moreno Vera
+Geckoer en Geckotronics
+frankmoreno1993@gmail.com
+@kranfix
+
+
+* Introducción
+
+* Formas de ingresar datos a un programa
+
+No todos los parámetros que un programa necesita para operar tienen que ser
+dados mediante entradas y salidas estandar. También le podemos pasarla por
+argumentos al momento de ejecución:
+
+  $ ejecutable param1 param2 param3 param4
+
+* ¿Cómo C/C++ lee estos parámetros?
+
+Cuando definimos la función main escribimos lo siguiente:
+
+  int main (int argc, char **argv) {...}
+
+Donde:
+
+  argc: `argument counter` o `contador de argumentos`
+  argv: `argument values` o `valores de argumentos`
+
+y tendremos:
+
+  argc = 5;
+  argv = { "ejecutable", "param1", "param2", "param3", "param4" };
