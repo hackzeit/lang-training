@@ -73,3 +73,23 @@ Detalles a tener en cuenta respecto a los valores de retorno de main:
   return 1: número de argumentos es menos al mínimo necesario (4).
   return 2: la operación indicada no es reconocida o no es soportada.
   return 3: cuando se intenta realizar una división por cero (0).
+
+* Programando (parte 1 de 4)
+
+*Verificando*cantidad*mínima*de*argumentos:*
+
+.code arguments/arguments.c /START minarg/,/STOP minarg/
+
+*De*char*array*a*int:*
+
+.code arguments/arguments.c /START atoi/,/STOP atoi/
+
+*En*caso*de*no*reconocer*operación:*
+
+.code arguments/arguments.c /START noop/,/STOP noop/
+
+* Programando (parte 2 de 4)
+
+  Seleccionar que el tipo de operación (s,r,m,d).
+  Ejecutar la operación aritmética.
+  imprimir el resultado de la operación.
