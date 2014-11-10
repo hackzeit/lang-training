@@ -59,8 +59,10 @@ void swap_simple() {
   puts("==================================");
 }
 
+void swap(){
+  static void * w;
+}
 void swap_optimo() {
-  void * w;
   puts("==================================");
   print_ints();
   puts("----------------------------------");
