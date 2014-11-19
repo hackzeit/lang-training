@@ -30,6 +30,8 @@ Geckoer en Geckotronics
 
 * Operadores lógicos
 
+.code operators/logicos.c /void logic/,/^}/
+
 * Operadores relacionales y de comparación
 
 *Comparación:*
