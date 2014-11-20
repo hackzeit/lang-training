@@ -1,0 +1,110 @@
+Argumentos por consola
+Tags: C, C++, arguments, argv, argc
+
+Frank A. Moreno Vera
+Geckoer en Geckotronics
+frankmoreno1993@gmail.com
+@kranfix
+
+
+* Introducción - Formas de ingresar datos a un programa
+
+No todos los parámetros que un programa necesita para operar tienen que ser
+dados mediante entradas y salidas estandar. También le podemos pasarla por
+argumentos al momento de ejecución:
+
+  $ ejecutable param1 param2 param3 param4
+
+* ¿Cómo C/C++ lee estos parámetros?
+
+Cuando definimos la función main escribimos lo siguiente:
+
+  int main (int argc, char **argv) {...}
+
+Donde:
+
+  argc: `argument counter` o `contador de argumentos`
+  argv: `argument values` o `valores de argumentos`
+
+y tendremos:
+
+  argc = 5;
+  argv = { "ejecutable", "param1", "param2", "param3", "param4" };
+
+* Ejemplo
+
+Crear un programa llamado arit que pueda hacer las 4 operaciones aritméticas
+básicas (suma, resta, multiplicación y división) y cuyos datos se dan con el
+siguiente formato:
+
+  # Suma: soporta hasta 8 número enteros
+  $ arit s 2 4 6 8 6
+  26
+
+  # Resta: solo utiliza los 2 primeros números enteros (6 y 7)
+  $ arit r 6 7 8
+  -1
+
+  # Multiplicación: soporta hasta 8 números enteros
+  $ arit m 4 5 6
+  120
+  
+  # División: solo utiliza los 2 primero número enteros (6 y 2)
+  #           y verifica que no se haga división por cero ( 0 )
+  $ arit d 6 2 7
+  3
+
+
+* Planificación de la solución
+
+Los pasos a seguir son:
+
+  Verificas que la mínima cantidad de argumentos sean 4.
+  Decidir cuantos números se operan.
+  Iniciar a convertir y almacenar los número escritos como `char arrays` a `int`.
+  Seleccionar que el tipo de operación (s,r,m,d).
+  Ejecutar la operación aritmética.
+  imprimir el resultado de la operación.
+
+Detalles a tener en cuenta respecto a los valores de retorno de main:
+
+  return 1: número de argumentos es menos al mínimo necesario (4).
+  return 2: la operación indicada no es reconocida o no es soportada.
+  return 3: cuando se intenta realizar una división por cero (0).
+
+* Programando la solución
+
+** Interpretando y validando los argumentos
+
+*Verificando*cantidad*mínima*de*argumentos:*
+
+.code arguments/arguments.c /START minarg/,/STOP minarg/
+
+*De*char*array*a*int:*
+
+.code arguments/arguments.c /START atoi/,/STOP atoi/
+
+*En*caso*de*no*reconocer*operación:*
+
+.code arguments/arguments.c /START noop/,/STOP noop/
+
+** Operaciones
+
+*En*caso*de*suma:*
+
+.code arguments/arguments.c /START SUM/,/STOP SUM/
+
+*En*caso*de*resta:*
+
+.code arguments/arguments.c /START RES/,/STOP RES/
+
+*En*caso*de*multiplicación:*
+
+.code arguments/arguments.c /START MUL/,/STOP MUL/
+
+*En*caso*de*división:*
+
+.code arguments/arguments.c /START DIV/,/STOP DIV/
+
+  Seleccionar que el tipo de operación (s,r,m,d).
+  imprimir el resultado de la operación.
