@@ -18,6 +18,13 @@ Geckoer en Geckotronics
 
 * Operador de asignación
 
+El operador igual (=) primero evalua lo que tiene a su lado derecho y después
+asigna el calor evaluado a la variable que está a su lado izquierdo.
+
+.code operators/asignacion_simple.cc /void asignacion1/,/^}/
+.code operators/asignacion_simple.cc /void asignacion2/,/^}/
+.code operators/asignacion_simple.cc /void asignacion3/,/^}/
+
 * Operadores aritméticos
 
 *Para*enteros:*
