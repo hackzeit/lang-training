@@ -28,10 +28,6 @@ Geckoer en Geckotronics
 
 .code operators/aritmeticos.cpp /void aritmeticos_float/,/^}/
 
-* Operadores lógicos
-
-.code operators/logicos.c /void logic/,/^}/
-
 * Operadores relacionales y de comparación
 
 *Comparación:*
@@ -41,6 +37,20 @@ Geckoer en Geckotronics
 *Relacionales:*
 
 .code operators/comp_relacional.c /void relacional/,/^}/
+
+* Operadores lógicos
+
+*NOT:*
+
+.code operators/logicos.cc /void logic_not/,/^}/
+
+*AND:*
+
+.code operators/logicos.cc /void logic_and/,/^}/
+
+*OR:*
+
+.code operators/logicos.cc /void logic_or/,/^}/
 
 * Operadores bit a bit
 Tenemos los siguientes operadores:
